@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NuevoProductoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese un producto a la lista de compras"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        />
+    <EditText
+        android:id="@+id/ingresarNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del producto"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        />
+    <EditText
+        android:id="@+id/ingresarCantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        />
+    <Spinner
+        android:id="@+id/ingresarUnidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/unidad"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        />
+    <EditText
+        android:id="@+id/otraUnidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Otra Unidad"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnIngresarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar Producto"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        />
+
+</LinearLayout>

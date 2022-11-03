@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ListaDeCompras</string>
+    <string-array name="unidad">
+        <item>Unidades</item>
+        <item>Kilos</item>
+        <item>Litros</item>
+        <item>Cajas</item>
+        <item>Paquetes</item>
+        <item>Otros</item>
+    </string-array>
+</resources>
