@@ -8,15 +8,13 @@ public class Producto {
 
     public static final boolean PENDIENTE=true;
     public static final boolean COMPRADO=false;
-    /*
-    public static final Producto[] productos=
-            {
-                    new Producto("Bebida",1,"litro"),
-                    new Producto("Papas fritas",2,"Bolsas"),
-                    new Producto("Aceitunas",2,"paquetes")
-            };
 
-     */
+    public Producto(String nombre, int cantidad, String unidad, boolean estado) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.unidad = unidad;
+        this.estado = estado;
+    }
 
     public Producto(String nombre, int cantidad, String unidad) {
         this.nombre = nombre;

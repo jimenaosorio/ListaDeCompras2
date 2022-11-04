@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import cl.ejemplos.listadecompras.modelo.ComprasDatabaseHelper;
 import cl.ejemplos.listadecompras.modelo.ListaDeCompras;
 import cl.ejemplos.listadecompras.modelo.Producto;
 
@@ -20,17 +21,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ComprasDatabaseHelper helper=new ComprasDatabaseHelper(this); //Llamamos a la base de datos
+
         Button verLista=(Button) findViewById(R.id.ver_lista);
         verLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<Producto> productos= ListaDeCompras.getInstancia().getListaDeCompras();
-                if(productos.size() > 0)
-                {
+                try {
+                    ArrayList<Producto> productos= (ArrayList<Producto>) helper.listaProductos(); //Lista desde la base de datos
                     Intent intent=new Intent(MainActivity.this,ListaProductosActivity.class);
                     startActivity(intent);
                 }
-                else
+                catch (Exception ex)
                 {
                     Toast.makeText(MainActivity.this, "La lista de compras está vacía",Toast.LENGTH_SHORT).show();
                 }
@@ -51,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ListaDeCompras.getInstancia().eliminarComprados();
-                Toast.makeText(MainActivity.this,"Se han eliminado los productos comprados",Toast.LENGTH_SHORT).show();
+                String msg=helper.eliminarComprados();
+                Toast.makeText(MainActivity.this,msg,Toast.LENGTH_SHORT).show();
             }
         });
     }
